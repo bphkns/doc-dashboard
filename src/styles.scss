@@ -8,15 +8,116 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$documentation-dashboard-primary: mat-palette($mat-indigo);
-$documentation-dashboard-accent: mat-palette($mat-pink, A200, A100, A400);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-primary: (
+    50 : #fef0e5,
+    100 : #fcd9bf,
+    200 : #fabf94,
+    300 : #f8a569,
+    400 : #f79249,
+    500 : #f57f29,
+    600 : #f47724,
+    700 : #f26c1f,
+    800 : #f06219,
+    900 : #ee4f0f,
+    A100 : #ffffff,
+    A200 : #ffece6,
+    A400 : #ffc6b3,
+    A700 : #ffb39a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$md-danger: (
+    50 : #e4e5e7,
+    100 : #bcbfc2,
+    200 : #8f9499,
+    300 : #626970,
+    400 : #414952,
+    500 : #1f2933,
+    600 : #1b242e,
+    700 : #171f27,
+    800 : #121920,
+    900 : #0a0f14,
+    A100 : #589fff,
+    A200 : #2582ff,
+    A400 : #0067f1,
+    A700 : #005cd7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+$md-accent: (
+    50 : #f5f7fa,
+    100 : #e4e7eb,
+    200 : #cbd2d9,
+    300 : #9aa5b1,
+    400 : #7b8794,
+    500 : #7b8794,
+    600 : #616e7c,
+    700 : #52606d,
+    800 : #3e4c59,
+    900 : #323f4b,
+    A100 : #1f2933,
+    A200 : #95c5fe,
+    A400 : #61aaff,
+    A700 : #479cff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000
+    )
+);
+
+
+
+$documentation-dashboard-primary: mat-palette($md-primary,400,200,400);
+$documentation-dashboard-accent: mat-palette($md-accent, 300, 100, 400);
 
 // The warn palette is optional (defaults to red).
-$documentation-dashboard-warn: mat-palette($mat-red);
+$documentation-dashboard-warn: mat-palette($md-danger);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $documentation-dashboard-theme: mat-light-theme($documentation-dashboard-primary, $documentation-dashboard-accent, $documentation-dashboard-warn);
@@ -25,7 +126,12 @@ $documentation-dashboard-theme: mat-light-theme($documentation-dashboard-primary
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($documentation-dashboard-theme);
-
+@import './app/navbar/navbar.component.scss';
+@include navbar-theme($documentation-dashboard-theme);
+@import './app/side-navigation//side-navigation.component.scss';
+@include side-nav-theme($documentation-dashboard-theme);
+@import './app/table-of-contents/table-of-contents.component.scss';
+@include table-of-contents-theme($documentation-dashboard-theme);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

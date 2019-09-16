@@ -1,0 +1,60 @@
+@import "~@angular/material/theming";
+
+@mixin side-nav-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn : map-get($theme , warn);
+
+  .side-navbar {
+    background-color: mat-color($accent, 50);
+    padding-left: 1rem;
+    overflow: auto;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .side-navbar-header {
+    font-weight: 400;
+  }
+  .category {
+      margin-bottom: 2rem;
+  }
+
+  .category-header {
+    min-height: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: mat-color($accent, 700);
+    text-transform: uppercase;
+  }
+
+  .sub-category {
+    margin: 0;
+    padding: 0;
+    padding-left:0.15rem;
+    padding-right: 0.15rem;
+    min-height: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+
+  .selected {
+    font-weight: 400;
+    border-left: .15rem solid mat-color($accent, 700);
+    color: mat-color($primary,700);
+  }
+
+  .sub-category p {
+    margin: 0;
+    padding: 0;
+    padding-left: 2rem;
+  }
+
+  .side-navbar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0.25rem;
+  }
+  .side-navbar::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: mat-color($accent, 300);
+  }
+}

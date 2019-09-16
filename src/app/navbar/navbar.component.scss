@@ -1,0 +1,15 @@
+@import "~@angular/material/theming";
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin navbar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .navbar {
+      background-color: mat-color($primary);
+  }
+}

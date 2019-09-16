@@ -1,0 +1,14 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start stretch"  class="side-navbar mat-elevation-z1">
+
+    <div fxFlex="10" class="side-navbar-header">
+        <p>Natural Language Processing</p>
+    </div>
+    <div fxFlex="auto" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0.75rem" *ngFor="let category of sideNav$ | async" class="category">
+        <div class="category-header">
+            {{ category.name }}
+        </div>
+        <div class="sub-category" [ngClass]="{'selected': subCategory === 'Getting started with Visual Recognition','mat-elevation-z1': subCategory === 'Getting started with Visual Recognition'}" *ngFor="let subCategory of category.subCategory">
+            <p> {{ subCategory }} </p>
+        </div>
+    </div>
+</div>
