@@ -1,0 +1,57 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="2rem" class="playground">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0.65rem" class="playground-description">
+        <h4 class="playground-description-header">Playground Description Header</h4>
+        <p class="playground-description-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora laudantium ratione labore voluptatibus cum
+            maiores ducimus illo, mollitia totam fuga? Saepe maiores libero, rem qui aspernatur officiis dolores hic et!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque consequatur voluptatibus earum
+            praesentium aliquam quia! Tempore numquam ipsum a, vel tempora voluptatem in! Molestias atque porro
+            necessitatibus blanditiis aspernatur?
+        </p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="0.5rem" class="playground-url-container">
+        <div fxLayout="row" fxLayoutAlign="start center" class="playground-url">
+            <div fxLayout="row" fxLayoutAlign="center center" class="link-icon">
+                <mat-icon>link</mat-icon>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="link-method">
+                <mat-select [(value)]="selected">
+                    <mat-option value="POST">POST</mat-option>
+                    <mat-option value="GET">GET</mat-option>
+                    <mat-option value="DELETE">DELETE</mat-option>
+                </mat-select>
+            </div>
+            <div fxFlex="auto" fxLayout="row" class="link-input">
+                <input type="text" value="https://google.com">
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="link-button">
+                <mat-icon>play_arrow</mat-icon>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.15rem" class="playground-links">
+            <mat-icon>settings_applications</mat-icon>
+            <span>Configure</span>
+        </div>
+    </div>
+    <div fxFlex="auto" fxLayoutGap="0.5rem" class="playground-result">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="RESPONSE">
+                <div fxLayout="column" fxLayoutAlign="start stretch" class="playground-response">
+                    <div fxLayout="row" fxLayoutAlign="end start" class="playground-response-header">
+                        <div class="search-input">
+                            <input type="text">
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" class="search-icon">
+                            <mat-icon>search</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="REQUEST">
+                <div class="playground-response">
+                    Large content
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

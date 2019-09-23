@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: AppComponent
+    path: '',
+    redirectTo: 'content',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
+    path: 'content',
+    loadChildren: () => import('./container/container.module').then(mod => mod.ContainerModule)
   }
 ];
 

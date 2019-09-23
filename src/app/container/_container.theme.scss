@@ -1,0 +1,35 @@
+@import "~@angular/material/theming";
+
+@mixin container-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .container {
+    padding-top: 2rem;
+    font-family: "Fira Sans Condensed", sans-serif;
+
+    .container-content {
+      min-height: 6rem;
+      background-color: mat-color($accent, 50);
+      margin-right: 2rem;
+      padding: 1rem;
+
+      .content-header {
+        font-weight: 400;
+        font-size: 1.25rem;
+        max-height: 2rem;
+      }
+
+      .content-body {
+        font-weight: 300;
+        font-size: 0.95rem;
+        .content-links {
+          text-decoration: none;
+          color: mat-color($primary, 700);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

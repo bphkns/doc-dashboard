@@ -1,21 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatToolbarModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { TableOfContentsComponent } from './table-of-contents/table-of-contents.component';
+import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavigationComponent,
-    NavbarComponent,
-    TableOfContentsComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

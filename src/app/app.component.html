@@ -1,14 +1,13 @@
 <div style="width: 100%;height:100%" fxLayout="column"  fxLayoutAlign="start stretch" class="main">
-    <div fxFlex="6" class="mat-elevation-z6">
+    <div fxFlex="8" class="mat-elevation-z6">
         <app-navbar></app-navbar>
     </div>
     <div fxFlexFill fxLayout="row" fxLayoutAlign="start stretch" fxFlex="auto" fxLayoutGap="1rem">
         <div fxFlexFill fxFlex="20" class="side-nav">
             <app-side-navigation></app-side-navigation>
         </div>
-        <div fxFlexFill fxFlex="auto" class="container"></div>
-        <div fxFlexFill fxFlex="15">
-                <app-table-of-contents></app-table-of-contents>
+        <div fxFlex="auto">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

@@ -1,0 +1,127 @@
+@import "~@angular/material/theming";
+
+@mixin playground-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .playground {
+    padding-top: 2rem;
+    font-family: "Fira Sans Condensed", sans-serif;
+
+    .playground-description {
+      min-height: 5rem;
+      margin-right: 2rem;
+      padding: 1rem;
+      background-color: mat-color($accent, 50);
+      h4 {
+        margin: 0rem;
+        padding: 0rem;
+      }
+
+      .playground-description-header {
+        font-weight: 300;
+        font-size: 1rem;
+        color: mat-color($primary, 700);
+      }
+
+      p {
+        margin: 0rem;
+        padding: 0rem;
+        text-align: justify;
+      }
+
+      .playground-description-content {
+        font-weight: 300;
+        font-size: 0.97rem;
+      }
+    }
+
+    .playground-url-container {
+      min-height: 6rem;
+      max-height: 6rem;
+      margin-right: 2rem;
+      padding: 0.75rem;
+      background-color: mat-color($accent, 50);
+      color: mat-color($primary, 700);
+      font-weight: 300;
+
+      .playground-url {
+        min-height: 60%;
+        max-height: 4rem;
+        .link-icon {
+          min-height: 100%;
+          min-width: 3rem;
+          font-size: 2rem;
+          background-color: mat-color($accent, 200);
+        }
+        .link-method {
+          min-height: 100%;
+          min-width: 6rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          background-color: mat-color($accent, 200);
+          font-weight: bold;
+          border-left: 0.05rem solid mat-color($primary, 700);
+        }
+        .link-input {
+          min-height: 100%;
+          input {
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            font-weight: inherit;
+            //   cursor: not-allowed;
+            padding-left: 0.5rem;
+          }
+        }
+        .link-button {
+          min-height: 100%;
+          min-width: 3rem;
+          font-size: 2rem;
+          background-color: mat-color($accent, 200);
+          cursor: pointer;
+        }
+      }
+
+      .playground-links {
+        cursor: pointer;
+        span {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .playground-result {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+      .playground-response {
+        font-weight: 300;
+        padding: 0.5rem;
+        background-color: mat-color($accent, 100);
+        min-height: 20rem;
+        .playground-response-header {
+          color: mat-color($primary, 700);
+          font-size: 1rem;
+          min-height: 15%;
+          max-height: 3rem;
+          .search-input {
+            min-height: 100%;
+            input {
+              height: 100%;
+              outline: none;
+              font-size: inherit;
+              font-weight: inherit;
+            }
+          }
+          .search-icon {
+            min-height: 100%;
+            min-width: 3rem;
+            cursor: pointer;
+            background-color: mat-color($accent, 200);
+          }
+        }
+      }
+    }
+  }
+}
